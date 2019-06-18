@@ -1,0 +1,52 @@
+#!/bin/bash
+###
+### Controls Cantaloupe for databank
+###
+
+CANTALOUPE_WAR=cantaloupe.war
+CANTALOUPE_DIR=$HOME/cantaloupe-databank
+HEAP_SIZE=2g
+PID_DIR=$CANTALOUPE_DIR/run
+PID_FILE=$PID_DIR/cantaloupe.pid
+LIBRARY_PATH=/usr/local/lib
+
+mkdir -p $PID_DIR
+
+start () {
+    if [ -f $PID_FILE ]; then
+        echo "$PID_FILE found - Cantaloupe may already be running"
+    else
+        cd $CANTALOUPE_DIR
+        java -Dcantaloupe.config=$CANTALOUPE_DIR/cantaloupe.properties \
+            -Djava.library.path=$LIBRARY_PATH \
+            -Xmx$HEAP_SIZE \
+            -jar $CANTALOUPE_WAR >> /dev/null 2>&1 &
+        echo $! > $PID_FILE
+        echo "Started Cantaloupe"
+    fi
+
+}
+
+stop () {
+    if [ -f $PID_FILE ]; then
+        kill $(cat $PID_FILE)
+        rm $PID_FILE
+        echo "Stopped Cantaloupe"
+    else
+        echo "$PID_FILE not found"
+    fi
+
+}
+
+case "$1" in
+     start)
+	start
+	;;
+     stop)
+	stop
+        ;;
+    restart)
+	stop
+	start
+	;;
+esac

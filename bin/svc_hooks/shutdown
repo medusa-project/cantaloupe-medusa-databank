@@ -1,0 +1,17 @@
+#!/bin/bash
+###
+### shutdown - service hook for shutting down  services; called by
+###            /etc/init.d/services_startup
+###
+
+# Load environment variables
+HOME=/home/iiif
+. $HOME/.bashrc
+
+# Stop Cantaloupe
+$HOME/bin/cantaloupe-medusa stop
+$HOME/bin/cantaloupe-databank stop
+
+# Unmount S3 buckets
+$HOME/bin/unmount-buckets
+

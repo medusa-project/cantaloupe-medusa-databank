@@ -1,0 +1,11 @@
+These scripts are invoked by the scripts in the svc_hooks directory, which
+in turn are invoked by /etc/init.d/services_startup.
+
+Instead of running them manually, use:
+
+sudo service services_startup start|stop|restart|status
+
+If they are not already registered, first do:
+
+sudo chkconfig services_startup --add
+sudo chkconfig --level 345 services_startup on
