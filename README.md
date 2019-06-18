@@ -13,9 +13,11 @@ The Cantaloupe war is too big to fit in the Medusa Project GitHub repository. It
 
 Create symlinks between current versions of files and persistent symlinks. For example:
 
+```
 ln -s bin/svc_hooks svc_hooks
 ln -s dist/cantaloupe-4.0.3-SNAPSHOT/cantaloupe-4.0.3-SNAPSHOT.war cantaloupe-databank/cantaloupe.war
 ln -s dist/cantaloupe-4.0.3-SNAPSHOT/cantalopue-4.0.3-SNAPSHOT.war cantaloupe-medusa/cantaloupe.war
 ln -s cantalopue-databank/delegates-4.0.rb cantaloupe-databank/delegates.rb
 ln -s cantalopue-databank/cantaloupe-4.0.properties cantaloupe-databank/cantaloupe.properties
 ln -s cantaloupe-medusa/cantaloupe-4.0.properties cantaloupe-medusa/cantaloupe.properties
+```
