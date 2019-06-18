@@ -21,3 +21,4 @@ ln -s cantalopue-databank/delegates-4.0.rb cantaloupe-databank/delegates.rb
 ln -s cantalopue-databank/cantaloupe-4.0.properties cantaloupe-databank/cantaloupe.properties
 ln -s cantaloupe-medusa/cantaloupe-4.0.properties cantaloupe-medusa/cantaloupe.properties
 ```
+Files for different environments are stored in different branches, such as prod and demo.
