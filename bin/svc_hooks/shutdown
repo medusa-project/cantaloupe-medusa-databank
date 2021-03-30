@@ -13,5 +13,5 @@ $HOME/cantaloupe-medusa-databank/bin/cantaloupe-medusa stop
 $HOME/cantaloupe-medusa-databank/bin/cantaloupe-databank stop
 
 # Unmount S3 buckets
-$HOME/bin/unmount-buckets
+$HOME/cantaloupe-medusa-databank/bin/unmount-buckets
 
