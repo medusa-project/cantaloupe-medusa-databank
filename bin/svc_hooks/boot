@@ -12,5 +12,5 @@ HOME=/home/iiif
 $HOME/bin/mount-buckets
 
 # Start Cantaloupe
-$HOME/bin/cantaloupe-medusa start
-$HOME/bin/cantaloupe-databank start
+$HOME/cantaloupe-medusa-databank/bin/cantaloupe-medusa start
+$HOME/cantaloupe-medusa-databank/bin/cantaloupe-databank start
