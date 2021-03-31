@@ -4,7 +4,7 @@
 ###
 
 CANTALOUPE_EXECUTABLE=cantaloupe.jar
-CANTALOUPE_DIR=$HOME/cantaloupe-databank
+CANTALOUPE_DIR=$HOME/cantaloupe-medusa-databank/cantaloupe-databank
 HEAP_SIZE=2g
 PID_DIR=$CANTALOUPE_DIR/run
 PID_FILE=$PID_DIR/cantaloupe.pid

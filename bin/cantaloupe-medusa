@@ -4,7 +4,7 @@
 ###
 
 CANTALOUPE_WAR=cantaloupe.war
-CANTALOUPE_DIR=$HOME/cantaloupe-medusa
+CANTALOUPE_DIR=$HOME/cantaloupe-medusa-databank/cantaloupe-medusa
 HEAP_SIZE=8g
 PID_DIR=$CANTALOUPE_DIR/run
 PID_FILE=$PID_DIR/cantaloupe.pid
