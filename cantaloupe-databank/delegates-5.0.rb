@@ -221,7 +221,7 @@ class CustomDelegate
 
     begin
 
-      filepath_json = JSON.load(open('https://databank.illinois.edu/datafiles/' + identifier + '/iiif_filepath.json'))
+      filepath_json = JSON.load(open('https://demo.databank.illinois.edu/datafiles/' + identifier + '/iiif_filepath.json'))
 
       if filepath_json.has_key?('filepath')
         return filepath_json['filepath']
