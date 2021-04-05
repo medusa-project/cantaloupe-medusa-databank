@@ -9,8 +9,8 @@ HOME=/home/iiif
 . $HOME/.bashrc
 
 # Mount S3 buckets
-$HOME/bin/mount-buckets
+$HOME/cantaloupe-medusa-databank/bin/mount-buckets
 
 # Start Cantaloupe
-$HOME/bin/cantaloupe-medusa start
-$HOME/bin/cantaloupe-databank start
+$HOME/cantaloupe-medusa-databank/bin/cantaloupe-medusa start
+$HOME/cantaloupe-medusa-databank/bin/cantaloupe-databank start

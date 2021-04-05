@@ -1,3 +1,2 @@
 fusermount -u $HOME/buckets/medusa-main
-fusermount -u $HOME/buckets/medusa-prod-main
 fusermount -u $HOME/buckets/databank-main

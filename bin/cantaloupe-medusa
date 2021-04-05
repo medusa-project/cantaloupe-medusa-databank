@@ -3,8 +3,8 @@
 ### Controls Cantaloupe for medusa
 ###
 
-CANTALOUPE_WAR=cantaloupe.war
-CANTALOUPE_DIR=$HOME/cantaloupe-medusa
+CANTALOUPE_EXECUTABLE=cantaloupe.jar
+CANTALOUPE_DIR=$HOME/cantaloupe-medusa-databank/cantaloupe-medusa
 HEAP_SIZE=8g
 PID_DIR=$CANTALOUPE_DIR/run
 PID_FILE=$PID_DIR/cantaloupe.pid
@@ -20,7 +20,7 @@ start () {
         java -Dcantaloupe.config=$CANTALOUPE_DIR/cantaloupe.properties \
             -Djava.library.path=$LIBRARY_PATH \
             -Xmx$HEAP_SIZE \
-            -jar $CANTALOUPE_WAR >> /dev/null 2>&1 &
+            -jar $CANTALOUPE_EXECUTABLE >> /dev/null 2>&1 &
         echo $! > $PID_FILE
         echo "Started Cantaloupe"
     fi
