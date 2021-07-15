@@ -3,9 +3,9 @@ require 'logger'
 require 'json'
 
 HTTP_GREEN_STATUS = '200'
-logger = Logger.new('/Users/gen/workstuff/test/cantaloupe_status.log', 1, 500000)
+logger = Logger.new('/home/iiif/log/health-checks/health_check_status.log', 1, 500000)
 
-instance_id = File.open('/Users/gen/workstuff/test/instance-id', &:readline).strip    
+instance_id = File.open('/var/lib/cloud/data/instance-id', &:readline).strip    
 
 databank_uri = URI('https://demo.iiif.library.illinois.edu/databank/health')
 databank_response = Net::HTTP.get_response(databank_uri)
