@@ -16,7 +16,6 @@ begin
 
     databank_log = {"InstanceId" => instance_id, "databank_code" => databank_response.code, "databank_message" => databank_response_body}
 rescue JSON::ParserError => e
-    databank_response_HTML = Nokogiri::HTML.parse(databank_response.body)
     databank_log = {"instance_id" => instance_id, "databank_code" => databank_response.code, "databank_message" => "Error parsing databank health check JSON"}
 end   
 
@@ -33,7 +32,6 @@ begin
 
     medusa_log = {"InstanceId" => instance_id, "medusa_code" => medusa_response.code, "medusa_message" => medusa_response_body}
 rescue JSON::ParserError => e
-    medusa_response_HTML = Nokogiri::HTML.parse(medusa_response.body)
     medusa_log = {"instance_id" => instance_id, "medusa_code" => medusa_response.code, "medusa_message" => "Error parsing medusa health check JSON"}
 end 
 
