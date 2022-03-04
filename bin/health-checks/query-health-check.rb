@@ -18,7 +18,7 @@ begin
 rescue JSON::ParserError => e
     databank_log = {"InstanceId" => instance_id, "databank_code" => databank_response.code, "databank_message" => "Error parsing databank health check JSON"}
 end
-logger.info(databank_log.to_json)
+databank_response.code == "200" ? logger.info(databank_log.to_json) : logger.error(databank_log.to_json)
 
 
 medusa_uri = URI('https://iiif.library.illinois.edu/medusa/health')
@@ -32,5 +32,5 @@ begin
     medusa_log = {"InstanceId" => instance_id, "medusa_code" => medusa_response.code, "medusa_message" => medusa_response_body}
 rescue JSON::ParserError => e
     medusa_log = {"InstanceId" => instance_id, "medusa_code" => medusa_response.code, "medusa_message" => "Error parsing medusa health check JSON"}
-end     
-logger.info(medusa_log.to_json)
+end
+medusa_response.code == "200" ? logger.info(medusa_log.to_json) : logger.error(medusa_log.to_json)
