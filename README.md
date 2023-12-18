@@ -5,6 +5,8 @@ Dependency: rclone set up
 
 Clone this into /home/iiif -- the iiif user should be the owner
 
+Copy .config to /home/iiif
+
 Copy /etc/init.d/services_startup to that location on server. For copied file, ensure root as owner and 755 as permissions.
 
 Create a dist directory in /home/iiif and put the Cantaloupe war file in it.
