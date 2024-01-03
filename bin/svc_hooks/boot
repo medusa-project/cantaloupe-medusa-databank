@@ -13,7 +13,7 @@ DATABANK_FILES=$(ls $HOME/buckets/databank-demo-main | wc -l)
 MEDUSA_FILES=$(ls $HOME/buckets/medusa-demo-main | wc -l)
 
 # Mount S3 buckets
-while [ $ITR -le 120 ] && ( [ $DATABANK_FILES -eq 0 ] || [ $MEDUSA_FILES -eq 0 ] )
+while [ $ITR -le 10 ] && ( [ $DATABANK_FILES -eq 0 ] || [ $MEDUSA_FILES -eq 0 ] )
 do
     $HOME/cantaloupe-medusa-databank/bin/mount-buckets
     ITR=$(( $ITR + 1 ))
