@@ -11,14 +11,14 @@ VFS_READ_CHUNK_SIZE=4M
 VFS_READ_CHUNK_SIZE_LIMIT=0
 
 # medusa-demo-main
-rclone mount aws-prod:medusa-demo-main $HOME/buckets/medusa-demo-main \
+/usr/local/bin/rclone mount aws-prod:medusa-demo-main $HOME/buckets/medusa-demo-main \
     --log-file=/home/iiif/log/rclone/medusa-demo-main.log \
     --vfs-cache-mode $VFS_CACHE_MODE \
     --vfs-read-chunk-size $VFS_READ_CHUNK_SIZE \
     --vfs-read-chunk-size-limit $VFS_READ_CHUNK_SIZE_LIMIT &
 
 # databank-demo-main
-rclone mount aws-prod:databank-demo-main $HOME/buckets/databank-demo-main \
+/usr/local/bin/rclone mount aws-prod:databank-demo-main $HOME/buckets/databank-demo-main \
     --log-file=/home/iiif/log/rclone/databank-demo-main.log \
     --vfs-cache-mode $VFS_CACHE_MODE \
     --vfs-read-chunk-size $VFS_READ_CHUNK_SIZE \
