@@ -31,6 +31,8 @@ HOOK_DIR="/home/${SVC_USER}/svc_hooks/"
 LOCKFILE=/var/lock/subsys/services_startup
 RETVAL=0
 STOP_TIMEOUT=10
+LOG_FILE=/tmp/services_startup.log
+exec 3>&1 1>>${LOG_FILE} 2>&1
 
 start() {
     echo -n $"Starting $SVC_USER services: "
