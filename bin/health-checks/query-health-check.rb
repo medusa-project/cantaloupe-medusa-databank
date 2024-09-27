@@ -6,7 +6,7 @@ logger = Logger.new('/home/iiif/log/health-checks/health_check_status.log', 1, 5
 
 instance_id = File.open('/var/lib/cloud/data/instance-id', &:readline).strip    
 
-databank_uri = URI("https://#{ENV['HOSTNAME']}/databank/health")
+databank_uri = URI('https://iiif-demo-rocky.library.illinois.edu/databank/health')
 databank_response = Net::HTTP.get_response(databank_uri)
 
 begin
@@ -22,7 +22,7 @@ end
 databank_response.code == "200" ? logger.info(databank_log.to_json) : logger.error(databank_log.to_json)
 
 
-medusa_uri = URI("https://#{ENV['HOSTNAME']}/medusa/health")
+medusa_uri = URI('https://iiif-demo-rocky.library.illinois.edu/medusa/health')
 medusa_response = Net::HTTP.get_response(medusa_uri)
 
 begin
