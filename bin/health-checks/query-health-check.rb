@@ -6,7 +6,7 @@ logger = Logger.new('/home/iiif/log/health-checks/health_check_status.log', 1, 5
 
 instance_id = File.open('/var/lib/cloud/data/instance-id', &:readline).strip    
 
-databank_uri = URI('https://iiif.library.illinois.edu/databank/health')
+databank_uri = URI("https://#{ENV['HOSTNAME']}/databank/health")
 databank_response = Net::HTTP.get_response(databank_uri)
 
 begin
@@ -18,10 +18,11 @@ begin
 rescue JSON::ParserError => e
     databank_log = {"InstanceId" => instance_id, "databank_code" => databank_response.code, "databank_message" => "Error parsing databank health check JSON"}
 end
+
 databank_response.code == "200" ? logger.info(databank_log.to_json) : logger.error(databank_log.to_json)
 
 
-medusa_uri = URI('https://iiif.library.illinois.edu/medusa/health')
+medusa_uri = URI("https://#{ENV['HOSTNAME']}/medusa/health")
 medusa_response = Net::HTTP.get_response(medusa_uri)
 
 begin
@@ -33,4 +34,5 @@ begin
 rescue JSON::ParserError => e
     medusa_log = {"InstanceId" => instance_id, "medusa_code" => medusa_response.code, "medusa_message" => "Error parsing medusa health check JSON"}
 end
+
 medusa_response.code == "200" ? logger.info(medusa_log.to_json) : logger.error(medusa_log.to_json)
