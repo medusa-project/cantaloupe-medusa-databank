@@ -1,2 +1,2 @@
-fusermount -u $HOME/buckets/medusa-main
-fusermount -u $HOME/buckets/databank-main
+fusermount -u $HOME/buckets/medusa-demo-main
+fusermount -u $HOME/buckets/databank-demo-main
